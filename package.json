@@ -1,0 +1,24 @@
+{
+  "name": "course-project-pinterest-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"dev": "parcel ./src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NazarDzneladze/Course-project-Pinterest-clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NazarDzneladze/Course-project-Pinterest-clone/issues"
+  },
+  "homepage": "https://github.com/NazarDzneladze/Course-project-Pinterest-clone#readme",
+  "dependencies": {
+    "parcel": "^2.7.0"
+  }
+}
