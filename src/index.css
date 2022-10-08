@@ -1,0 +1,24 @@
+html {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 100%;
+  }
+  
+  *, *::before, *::after {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+.pinterest-board__content_hover:hover .position{
+	display: flex;
+}
+
+.pinterest-board__content_hover:hover .pinterest-board__hover-menu{
+	display: block;
+	background-color: 	rgba(147,147,147,0.5);
+}
+
+.dropdown-content button:hover {background-color: #ddd;}
+  
+.dropdown:hover .dropdown-content {display: flex;}
+
