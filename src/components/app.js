@@ -34,14 +34,20 @@ export function App() {
 		alert(`Ваша жалоба на пит от пользователя ${authorName} успешна отправлена!`);
 	}
 
+	
+	// Открытие модального окна по добавлению пина на какую-либо из досок
+	this.openModal = (id) => {
+		this.modal.update(id);
+	}
+
 	this.search = new Input({ placeholder: 'Поиск...', onInput: this.search });//Добавление строки поиска
 	this.pinsBoard = new PinsBoard({
 		pins: [],
 		removePin: this.removePin,
 		complainPin: this.complainAboutPin,
-		addOnBoard: this.cons
+		openModal: this.openModal,
 	});//Добавление доски, в которой будут отрисовываться пины
-	this.modal = new Modal();//Добавление html-кода модального окна
+	this.modal = new Modal();
 
 
 	this.rootElement.append(this.search.rootElement, this.pinsBoard.rootElement, this.modal.rootElement);

@@ -1,7 +1,7 @@
 import './pins-board.css';
 import { Pin } from '../pin/pin';
 
-export function PinsBoard({ pins, removePin, complainPin, hashTag, addOnBoard }) {
+export function PinsBoard({ pins, removePin, complainPin, hashTag, openModal }) {
 	this.rootElement = document.createElement('div');
 	this.rootElement.classList.add('pinterest-board');
 
@@ -17,7 +17,7 @@ export function PinsBoard({ pins, removePin, complainPin, hashTag, addOnBoard })
 					nickname: pin.authorName,
 					remove: removePin,
 					complain: complainPin,
-					addOnBoard: addOnBoard,
+					modal: openModal,
 				})
 				this.rootElement.append(pinItem.rootElement);
 			})
@@ -30,6 +30,4 @@ export function PinsBoard({ pins, removePin, complainPin, hashTag, addOnBoard })
 		const search = pins.filter(item => item.hashTag === hashTag);
 		this.update({ pins: search })
 	}
-
-	// this.update({ pins });
 }

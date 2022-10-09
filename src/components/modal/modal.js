@@ -1,7 +1,26 @@
 import { Button } from "../common/button/button";
-import { addOnBoardOne } from "../api/local-storage";
+import { addToBoard } from "../api/local-storage";
+import { getPins } from "../api/pins";
 
 export function Modal() {
+
+	this.update = (id) => {
+		this.id = id;
+		console.log(this.id);
+	}
+
+	this.addToBoardOne = () => {
+		getPins().then(data => addToBoard({ pins: data, id: this.id, board: 'pinBoard1' }))
+	}
+
+	this.addToBoardTwo = () => {
+		getPins().then(data => addToBoard({ pins: data, id: this.id, board: 'pinBoard2' }))
+	}
+
+	this.addToBoardThree = () => {
+		getPins().then(data => addToBoard({ pins: data, id: this.id, board: 'pinBoard3' }))
+	}
+
 	this.rootElement = document.createElement('div');
 	this.rootElement.classList.add('modal', 'fade');
 	this.rootElement.id = 'exampleModal';
@@ -35,9 +54,9 @@ export function Modal() {
 	this.buttonsBox.style.display = 'flex';
 	this.buttonsBox.style.flexDirection = 'column';
 
-	this.buttonBoardOne = new Button({ label: "доска1"});
-	this.buttonBoardTwo = new Button({ label: "доска2" });
-	this.buttonBoardThree = new Button({ label: "доска3" });
+	this.buttonBoardOne = new Button({ label: "Доска 1", onClick: this.addToBoardOne });
+	this.buttonBoardTwo = new Button({ label: "Доска 2", onClick: this.addToBoardTwo });
+	this.buttonBoardThree = new Button({ label: "Доска 3", onClick: this.addToBoardThree });
 
 	this.buttonsBox.append(this.buttonBoardOne.rootElement, this.buttonBoardTwo.rootElement, this.buttonBoardThree.rootElement)
 

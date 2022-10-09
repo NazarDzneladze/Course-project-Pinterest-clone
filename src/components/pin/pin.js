@@ -1,7 +1,7 @@
 import './pin.css';
 import { Button } from '../common/button/button';
 
-export function Pin({ id, img, avatar, nickname, remove, complain, addOnBoard }) {
+export function Pin({ id, img, avatar, nickname, remove, complain, modal}) {
 
 	this.rootElement = document.createElement('div');
 	this.rootElement.classList.add('pinterest-board__item');
@@ -15,7 +15,7 @@ export function Pin({ id, img, avatar, nickname, remove, complain, addOnBoard })
 	}
 
 	this.id = () => {
-		addOnBoard(id)
+		modal(id);
 	}
 
 

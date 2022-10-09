@@ -5,8 +5,10 @@
 }
 
 .pinterest-board__content {
+	border: 1px solid black;
 	position: relative;
 	max-width: 250px;
+	border-radius: 15px;
 }
 
 .img {
