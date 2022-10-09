@@ -8,3 +8,4 @@ root.append(app.rootElement);
 
 app.showPins();
 initializePinsBase();
+

@@ -1,3 +1,4 @@
+import { Header } from "./header";
 import { PinsBoard } from "./pins-board/pins-board";
 import { getPins, deletePin } from "./api/pins";
 import { Input } from "./common/input/input";
@@ -48,7 +49,9 @@ export function App() {
 		openModal: this.openModal,
 	});//Добавление доски, в которой будут отрисовываться пины
 	this.modal = new Modal();
+   // создаём шапку
+  this.header = new Header();
 
 
-	this.rootElement.append(this.search.rootElement, this.pinsBoard.rootElement, this.modal.rootElement);
+	this.rootElement.append(this.header.root,this.search.rootElement, this.pinsBoard.rootElement, this.modal.rootElement);
 }
