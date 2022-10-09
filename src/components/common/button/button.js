@@ -5,4 +5,5 @@ export function Button({ label, onclick, id, className }) {
   this.rootElement.type = "button";
   this.rootElement.innerText = label || "";
   this.rootElement.addEventListener("click", onclick);
+}
 
