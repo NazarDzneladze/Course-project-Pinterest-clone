@@ -20,11 +20,11 @@ export function Header() {
   //  Cоздаём кнопку "главная"
   this.buttonMainPage = new Button({
     label: "Главная",
+    onclick: this.rootElement,
     id: "header-main-button",
-    onclick: this.root,
   });
-  this.div2.append(this.buttonMainPage.root);
-  this.buttonMainPage.root.onclick = () => {
+  this.div2.append(this.buttonMainPage.rootElement);
+  this.buttonMainPage.rootElement.onclick = () => {
     window.location.reload();
   };
 
@@ -35,10 +35,10 @@ export function Header() {
   // Создаём кнопку "Выбрать доску"
   this.buttonBoards = new Button({
     label: "Выбрать доску",
+    onclick: this.rootElement,
     id: "header-button-board",
-    onclick: this.root,
   });
-  this.div4.append(this.buttonBoards.root);
+  this.div4.append(this.buttonBoards.rootElement);
 
   // Список досок
   this.dropdownBoard = document.createElement("div");
@@ -49,23 +49,23 @@ export function Header() {
   // доска 1
   this.board1 = new Button({
     label: "Доска 1",
+    onclick: this.rootElement,
     id: "header-button-board1",
-    onclick: this.root,
   });
-  this.board1.root.onclick = () => {};
+  this.board1.rootElement.onclick = () => {};
 
   // доска 2
   this.board2 = new Button({
     label: "Доска 2",
+    onclick: this.rootElement,
     id: "header-button-board2",
-    onclick: this.root,
   });
 
   // доска 3
   this.board3 = new Button({
     label: "Доска 3",
+    onclick: this.rootElement,
     id: "header-button-board3",
-    onclick: this.root,
   });
 
   this.dropdownBoard.append(
