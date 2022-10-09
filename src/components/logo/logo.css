@@ -1,0 +1,9 @@
+.header-logo-img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+.header-logo-img:hover {
+  width: 52px;
+  height: 52px;
+}
