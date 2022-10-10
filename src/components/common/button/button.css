@@ -17,7 +17,7 @@
 }
 
 /* Кнопка выбрать доски */
-#header-button-board {
+.header-button-board {
   background-color: rgb(32, 30, 30);
   color: white;
   font-family: "Raleway", sans-serif;
@@ -31,17 +31,17 @@
   position: relative;
   display: inline-block;
 }
-#header-button-board:hover {
+.header-button-board:hover {
   background-color: black;
 }
 /* Выпадающий список досок */
-#header-dropdown-content {
+.header-dropdown-content {
   display: none;
   position: absolute;
   background-color: rgb(32, 30, 30);
   min-width: 170px;
   z-index: 1;
-  right: 10px;
+  margin: auto 10px;
   font-family: "Raleway", sans-serif;
   flex-direction: column;
   align-items: center;
@@ -49,7 +49,7 @@
   border-bottom-left-radius: 30px;
 }
 
-#header-dropdown-content button {
+.header-dropdown-content button {
   color: white;
   font-size: 14px;
   font-weight: 500;
@@ -58,9 +58,17 @@
   height: 50px;
   font-family: "Raleway", sans-serif;
 }
-#header-dropdown-content :last-child {
+.header-dropdown-content :last-child {
   margin-bottom: 10px;
 }
-#header-dropdown-content button:hover {
+.header-dropdown-content button:hover {
   color: rgb(203, 203, 203);
+}
+
+.show {
+  display: flex;
+}
+.border {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }

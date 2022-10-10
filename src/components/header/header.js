@@ -36,14 +36,16 @@ export function Header() {
   this.buttonBoards = new Button({
     label: "Выбрать доску",
     onclick: this.rootElement,
-    id: "header-button-board",
+    id: "button-show",
+    className: "header-button-board",
   });
   this.div4.append(this.buttonBoards.rootElement);
 
   // Список досок
   this.dropdownBoard = document.createElement("div");
-  this.dropdownBoard.id = "header-dropdown-content";
-  this.dropdownBoard.classList.add("MyDrop");
+  this.dropdownBoard.id = "drop";
+
+  this.dropdownBoard.classList.add("header-dropdown-content");
   this.div4.append(this.dropdownBoard);
 
   // доска 1
@@ -69,27 +71,23 @@ export function Header() {
   });
 
   this.dropdownBoard.append(
-    this.board1.root,
-    this.board2.root,
-    this.board3.root
+    this.board1.rootElement,
+    this.board2.rootElement,
+    this.board3.rootElement
   );
 
+  //  выпадающий список при нажатии на кнопку "выбрать доски"
   this.buttonBoards.rootElement.onclick = () => {
-    document.getElementById("header-dropdown-content").style.display = "flex";
-    document.getElementById(
-      this.buttonBoards.rootElement.id
-    ).style.borderBottomLeftRadius = "0px";
-    document.getElementById(
-      this.buttonBoards.rootElement.id
-    ).style.borderBottomRightRadius = "0px";
+    document.getElementById("drop").classList.toggle("show");
+    document.getElementById("button-show").classList.toggle("border");
   };
 
-  // this.window.root.onclick = (e) => {
-  //   if (!e.target.matches(".header-button-board")) {
-  //     let myDropdown = document.getElementById("header-dropdown-content");
-  //     if (myDropdown.classList.contains("header-dropdown-content")) {
-  //       myDropdown.classList.remove("header-dropdown-content");
-  //     }
-  //   }
-  // };
+  window.onclick = (e) => {
+    if (!e.target.matches(".header-button-board")) {
+      let myDropdown = document.getElementById("header-dropdown-content");
+      if (myDropdown.classList.contains("drop")) {
+        myDropdown.classList.remove("drop");
+      }
+    }
+  };
 }
