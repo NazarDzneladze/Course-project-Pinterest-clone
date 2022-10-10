@@ -1,7 +1,7 @@
 import './pin.css';
 import { Button } from '../common/button/button';
 
-export function Pin({ id, img, avatar, nickname, remove, complain, modal}) {
+export function Pin({ id, img, avatar, nickname, remove, complain, modal }) {
 
 	this.rootElement = document.createElement('div');
 	this.rootElement.classList.add('pinterest-board__item');
@@ -47,11 +47,11 @@ export function Pin({ id, img, avatar, nickname, remove, complain, modal}) {
 	// Кнопка "Добавить пин на доску"
 
 	// Кнопка "Скрыть пин со страницы"
-	this.hideFromBoardBtn = new Button({ label: "Скрить пин со страницы", className: 'menu-button', onClick: this.complain});
+	this.hideFromBoardBtn = new Button({ label: "Скрить пин со страницы", className: 'menu-button', onClick: this.remove });
 	// Кнопка "Скрыть пин со страницы"
 
 	// Кнопка "Пожаловаться на пин"
-	this.complainBtn = new Button({ label: "пожаловаться", className: 'menu-button', onClick: this.complain });
+	this.complainBtn = new Button({ label: "Пожаловаться", className: 'menu-button', onClick: this.complain });
 	// Кнопка "Пожаловаться на пин"
 
 	this.pinDropdownContent.append(this.addOnBoardBtn.rootElement, this.hideFromBoardBtn.rootElement, this.complainBtn.rootElement);
