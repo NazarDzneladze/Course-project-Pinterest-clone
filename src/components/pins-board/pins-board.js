@@ -30,4 +30,20 @@ export function PinsBoard({ pins, removePin, complainPin, hashTag, openModal }) 
 		const search = pins.filter(item => item.hashTag === hashTag);
 		this.update({ pins: search })
 	}
+
+	this.renderBoardOne = () => {
+		const board = JSON.parse(localStorage.getItem('pinBoard1'));
+		this.update({ pins: board });
+	}
+
+	this.renderBoardTwo = () => {
+		const board = JSON.parse(localStorage.getItem('pinBoard2'));
+		this.update({ pins: board });
+	}
+
+	this.renderBoardThree = () => {
+		const board = JSON.parse(localStorage.getItem('pinBoard3'));
+		this.update({ pins: board });
+	}
+
 }
