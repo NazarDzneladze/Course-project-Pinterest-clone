@@ -1,3 +1,4 @@
+import "./button.css";
 export function Button({ label, onclick, id, className }) {
   this.rootElement = document.createElement("button");
   this.rootElement.id = id;
@@ -6,4 +7,3 @@ export function Button({ label, onclick, id, className }) {
   this.rootElement.innerText = label || "";
   this.rootElement.addEventListener("click", onclick);
 }
-

@@ -1,12 +1,12 @@
 import "./logo.css";
 
 export function Logo() {
-  this.root = document.createElement("button");
-  this.root.classList.add("header-logo");
+  this.rootElement = document.createElement("button");
+  this.rootElement.classList.add("header-logo");
 
   this.a = document.createElement("a");
   this.a.href = "#";
-  this.root.append(this.a);
+  this.rootElement.append(this.a);
 
   this.img = document.createElement("img");
   this.img.src =

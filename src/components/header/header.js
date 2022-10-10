@@ -4,18 +4,18 @@ import { Button } from "../common/button";
 import { Input } from "../common/input";
 
 export function Header() {
-  this.root = document.createElement("div");
-  this.root.classList.add("header");
+  this.rootElement = document.createElement("div");
+  this.rootElement.classList.add("header");
 
   this.div1 = document.createElement("div");
   this.div2 = document.createElement("div");
   this.div3 = document.createElement("div");
   this.div4 = document.createElement("div");
-  this.root.append(this.div1, this.div2, this.div3, this.div4);
+  this.rootElement.append(this.div1, this.div2, this.div3, this.div4);
 
   //  Создаём лого
   this.logo = new Logo();
-  this.div1.append(this.logo.root);
+  this.div1.append(this.logo.rootElement);
 
   //  Cоздаём кнопку "главная"
   this.buttonMainPage = new Button({
@@ -30,20 +30,22 @@ export function Header() {
 
   // Создаём поиск
   this.input = new Input({ placeholder: "Поиск", id: "header-input" });
-  this.div3.append(this.input.root);
+  this.div3.append(this.input.rootElement);
 
   // Создаём кнопку "Выбрать доску"
   this.buttonBoards = new Button({
     label: "Выбрать доску",
     onclick: this.rootElement,
-    id: "header-button-board",
+    id: "button-show",
+    className: "header-button-board",
   });
   this.div4.append(this.buttonBoards.rootElement);
 
   // Список досок
   this.dropdownBoard = document.createElement("div");
-  this.dropdownBoard.id = "header-dropdown-content";
-  this.dropdownBoard.classList.add("MyDrop");
+  this.dropdownBoard.id = "drop";
+
+  this.dropdownBoard.classList.add("header-dropdown-content");
   this.div4.append(this.dropdownBoard);
 
   // доска 1
@@ -69,27 +71,23 @@ export function Header() {
   });
 
   this.dropdownBoard.append(
-    this.board1.root,
-    this.board2.root,
-    this.board3.root
+    this.board1.rootElement,
+    this.board2.rootElement,
+    this.board3.rootElement
   );
 
-  this.buttonBoards.root.onclick = () => {
-    document.getElementById("header-dropdown-content").style.display = "flex";
-    document.getElementById(
-      this.buttonBoards.root.id
-    ).style.borderBottomLeftRadius = "0px";
-    document.getElementById(
-      this.buttonBoards.root.id
-    ).style.borderBottomRightRadius = "0px";
+  //  выпадающий список при нажатии на кнопку "выбрать доски"
+  this.buttonBoards.rootElement.onclick = () => {
+    document.getElementById("drop").classList.toggle("show");
+    document.getElementById("button-show").classList.toggle("border");
   };
 
-  // this.window.root.onclick = (e) => {
-  //   if (!e.target.matches(".header-button-board")) {
-  //     let myDropdown = document.getElementById("header-dropdown-content");
-  //     if (myDropdown.classList.contains("header-dropdown-content")) {
-  //       myDropdown.classList.remove("header-dropdown-content");
-  //     }
-  //   }
-  // };
+  window.onclick = (e) => {
+    if (!e.target.matches(".header-button-board")) {
+      let myDropdown = document.getElementById("header-dropdown-content");
+      if (myDropdown.classList.contains("drop")) {
+        myDropdown.classList.remove("drop");
+      }
+    }
+  };
 }
