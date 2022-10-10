@@ -16,13 +16,14 @@ export function Header({ search, showBoardOne, showBoardTwo, showBoardThree }) {
 	}
 
 	this.openBoardsMenu = () => {
-		document.getElementById("header-dropdown-content").style.display = "flex";
-		document.getElementById(
-			this.buttonBoards.rootElement.id
-		).style.borderBottomLeftRadius = "0px";
-		document.getElementById(
-			this.buttonBoards.rootElement.id
-		).style.borderBottomRightRadius = "0px";
+    document.getElementById("drop").classList.toggle("show");
+    document.getElementById("button-show").classList.toggle("border");
+        if (!e.target.matches(".header-button-board")) {
+      let myDropdown = document.getElementById("header-dropdown-content");
+      if (myDropdown.classList.contains("drop")) {
+        myDropdown.classList.remove("drop");
+      }
+    }
 	}
 
 
@@ -56,11 +57,12 @@ export function Header({ search, showBoardOne, showBoardTwo, showBoardThree }) {
 	});
 	this.div4.append(this.buttonBoards.rootElement);
 
-	// Список досок
-	this.dropdownBoard = document.createElement("div");
-	this.dropdownBoard.id = "header-dropdown-content";
-	this.dropdownBoard.classList.add("MyDrop");
-	this.div4.append(this.dropdownBoard);
+  // Список досок
+  this.dropdownBoard = document.createElement("div");
+  this.dropdownBoard.id = "drop";
+
+  this.dropdownBoard.classList.add("header-dropdown-content");
+  this.div4.append(this.dropdownBoard);
 
 	// доска 1
 	this.board1 = new Button({
@@ -68,7 +70,6 @@ export function Header({ search, showBoardOne, showBoardTwo, showBoardThree }) {
 		onClick: showBoardOne,
 		id: "header-button-board1",
 	});
-	this.board1.rootElement.onclick = () => { };
 
 	// доска 2
 	this.board2 = new Button({
@@ -89,23 +90,13 @@ export function Header({ search, showBoardOne, showBoardTwo, showBoardThree }) {
 		this.board2.rootElement,
 		this.board3.rootElement,
 	);
-
-	// this.buttonBoards.rootElement.onclick = () => {
-	// 	document.getElementById("header-dropdown-content").style.display = "flex";
-	// 	document.getElementById(
-	// 		this.buttonBoards.rootElement.id
-	// 	).style.borderBottomLeftRadius = "0px";
-	// 	document.getElementById(
-	// 		this.buttonBoards.rootElement.id
-	// 	).style.borderBottomRightRadius = "0px";
-	// };
-
-	// this.window.root.onclick = (e) => {
-	//   if (!e.target.matches(".header-button-board")) {
-	//     let myDropdown = document.getElementById("header-dropdown-content");
-	//     if (myDropdown.classList.contains("header-dropdown-content")) {
-	//       myDropdown.classList.remove("header-dropdown-content");
-	//     }
-	//   }
-	// };
+  
+ // window.onclick = (e) => {
+ //   if (!e.target.matches(".header-button-board")) {
+ //    let myDropdown = document.getElementById("header-dropdown-content");
+ //     if (myDropdown.classList.contains("drop")) {
+ //       myDropdown.classList.remove("drop");
+ //     }
+ //   }
+ // };
 }
