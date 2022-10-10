@@ -1,12 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&display=swap");
 html {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	height: 100%;
-  }
-  
-  *, *::before, *::after {
-	-webkit-box-sizing: inherit;
-	box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 * {
@@ -44,30 +47,35 @@ input[type="submit"] {
 }
 
 #root {
-  margin: 0, auto;
   padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .app {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 
-.pinterest-board__content_hover:hover .position{
-	display: flex;
+.pinterest-board__content_hover:hover .position {
+  display: flex;
 }
 
-.pinterest-board__content_hover:hover .pinterest-board__hover-menu{
-	display: block;
-	background-color: 	rgba(147,147,147,0.5);
+.pinterest-board__content_hover:hover .pinterest-board__hover-menu {
+  display: block;
+  background-color: rgba(147, 147, 147, 0.5);
 }
 
-.dropdown-content button:hover {background-color: #ddd;}
-  
-.dropdown:hover .dropdown-content {display: flex;}
+.dropdown-content button:hover {
+  background-color: #ddd;
+}
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&display=swap");
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
 /* кнопка Главная */
 #header-main-button {
   background-color: rgb(32, 30, 30);
@@ -94,7 +102,7 @@ input[type="submit"] {
   font-size: 14px;
   font-weight: 100;
   border-radius: 30px;
-  min-width: 60vw;
+  min-width: 70vw;
   height: 50px;
   text-align: center;
   margin: auto 10px;
@@ -151,5 +159,3 @@ input[type="submit"] {
 #header-dropdown-content button:hover {
   color: rgb(203, 203, 203);
 }
-
-

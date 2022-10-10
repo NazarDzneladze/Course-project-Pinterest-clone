@@ -4,18 +4,18 @@ import { Button } from "../common/button";
 import { Input } from "../common/input";
 
 export function Header() {
-  this.root = document.createElement("div");
-  this.root.classList.add("header");
+  this.rootElement = document.createElement("div");
+  this.rootElement.classList.add("header");
 
   this.div1 = document.createElement("div");
   this.div2 = document.createElement("div");
   this.div3 = document.createElement("div");
   this.div4 = document.createElement("div");
-  this.root.append(this.div1, this.div2, this.div3, this.div4);
+  this.rootElement.append(this.div1, this.div2, this.div3, this.div4);
 
   //  Создаём лого
   this.logo = new Logo();
-  this.div1.append(this.logo.root);
+  this.div1.append(this.logo.rootElement);
 
   //  Cоздаём кнопку "главная"
   this.buttonMainPage = new Button({
@@ -30,7 +30,7 @@ export function Header() {
 
   // Создаём поиск
   this.input = new Input({ placeholder: "Поиск", id: "header-input" });
-  this.div3.append(this.input.root);
+  this.div3.append(this.input.rootElement);
 
   // Создаём кнопку "Выбрать доску"
   this.buttonBoards = new Button({
@@ -74,13 +74,13 @@ export function Header() {
     this.board3.root
   );
 
-  this.buttonBoards.root.onclick = () => {
+  this.buttonBoards.rootElement.onclick = () => {
     document.getElementById("header-dropdown-content").style.display = "flex";
     document.getElementById(
-      this.buttonBoards.root.id
+      this.buttonBoards.rootElement.id
     ).style.borderBottomLeftRadius = "0px";
     document.getElementById(
-      this.buttonBoards.root.id
+      this.buttonBoards.rootElement.id
     ).style.borderBottomRightRadius = "0px";
   };
 
