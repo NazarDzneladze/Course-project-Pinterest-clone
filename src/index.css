@@ -1,25 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&display=swap");
 html {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	height: 100%;
-  }
-  
-  *,
-  *::before,
-  *::after {
-	-webkit-box-sizing: inherit;
-	box-sizing: inherit;
-  }
-
-  
-* {
-	padding: 0px;
-	margin: 0px;
-	border: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
 }
 
-  :focus,
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+ :focus,
   :active {
 	outline: none;
   }
@@ -83,24 +82,6 @@ html {
   .dropdown-content button:hover {background-color: #ddd;}
 	
   .dropdown:hover .dropdown-content {display: -webkit-box;display: -ms-flexbox;display: flex;}
-  
-  /* кнопка Главная */
-  #header-main-button {
-	background-color: rgb(32, 30, 30);
-	color: white;
-	font-family: "Raleway", sans-serif;
-	font-size: 15px;
-	font-weight: 500;
-	border-radius: 30px;
-	min-width: 155px;
-	height: 50px;
-	text-align: center;
-	margin: auto 10px;
-	display: inline-block;
-  }
-  #header-main-button:hover {
-	background-color: black;
-   }
    
   .pinterest-board__content_hover:hover .pinterest-board__hover-menu {
 	display: block;
