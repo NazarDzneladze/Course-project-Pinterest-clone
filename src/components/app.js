@@ -3,6 +3,7 @@ import { PinsBoard } from "./pins-board/pins-board";
 import { getPins, deletePin } from "./api/pins";
 import { Modal } from "./modal";
 import { deletePinFromLocalStorage } from "./api/local-storage";
+import { Modal2 } from "./modal2/modal";
 
 export function App() {
 	this.rootElement = document.createElement('div');
@@ -61,6 +62,7 @@ export function App() {
 	});//Добавление доски, в которой будут отрисовываться пины
 
 	this.modal = new Modal();//Добавили код модального окна
+	this.modal2 = new Modal2();
 
 	// создаём шапку
 	this.header = new Header({
@@ -71,5 +73,5 @@ export function App() {
 	});
 
 
-	this.rootElement.append(this.header.rootElement, this.pinsBoard.rootElement, this.modal.rootElement);
+	this.rootElement.append(this.header.rootElement, this.pinsBoard.rootElement, this.modal.rootElement, this.modal2.rootElement);
 }

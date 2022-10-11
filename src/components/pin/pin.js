@@ -52,9 +52,9 @@ export function Pin({ id, img, avatar, nickname, remove, complain, modal }) {
 
 	// Кнопка "Пожаловаться на пин"
 	this.complainBtn = new Button({ label: "Пожаловаться", className: 'menu-button', onClick: this.complain });
-  //   this.complainBtn.rootElement.classList.add("btn", "btn-primary");
-  //   this.complainBtn.rootElement.setAttribute("data-bs-toggle", "modal");
-  //   this.complainBtn.rootElement.setAttribute("data-bs-target", "#exampleModal2");
+    this.complainBtn.rootElement.classList.add("btn", "btn-primary");
+    this.complainBtn.rootElement.setAttribute("data-bs-toggle", "modal");
+    this.complainBtn.rootElement.setAttribute("data-bs-target", "#exampleModal2");
 	// Кнопка "Пожаловаться на пин"
 
 	this.pinDropdownContent.append(this.addOnBoardBtn.rootElement, this.hideFromBoardBtn.rootElement, this.complainBtn.rootElement);

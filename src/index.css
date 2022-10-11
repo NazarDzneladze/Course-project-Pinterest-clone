@@ -12,11 +12,16 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  width: 100%;
+}
+
 * {
   padding: 0px;
   margin: 0px;
   border: none;
 }
+
 :focus,
 :active {
   outline: none;
@@ -40,6 +45,7 @@ select {
 button,
 input[type="submit"] {
   display: inline-block;
+  -webkit-box-shadow: none;
   box-shadow: none;
   background-color: transparent;
   background: none;
@@ -48,18 +54,31 @@ input[type="submit"] {
 
 #root {
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .app {
-  width: 100%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .pinterest-board__content_hover:hover .position {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -68,6 +87,8 @@ input[type="submit"] {
 }
 
 .dropdown:hover .dropdown-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -99,5 +120,12 @@ input[type="submit"] {
 }
 
 .dropdown:hover .dropdown-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+}
+@media (max-width: 420px) and (min-width: 320px) {
+  .header {
+    flex-direction: column;
+  }
 }
