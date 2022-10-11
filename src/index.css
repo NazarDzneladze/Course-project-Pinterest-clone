@@ -12,9 +12,6 @@ html {
 	box-sizing: inherit;
   }
 
- body{
-	width: 100%;
-}
   
 * {
 	padding: 0px;
@@ -64,7 +61,7 @@ html {
   }
   
   .app {
-	  max-width: 100%;
+	width: 100%;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -107,7 +104,7 @@ html {
    
   .pinterest-board__content_hover:hover .pinterest-board__hover-menu {
 	display: block;
-	background-color: rgba(147, 147, 147, 0.5);
+	background-color: rgba(65, 64, 64, 0.5);
   }
   
   .dropdown-content button:hover {
@@ -119,8 +116,13 @@ html {
 	display: -ms-flexbox;
 	display: flex;
   }
-  @media (max-width:420px) and (min-width:320px){
+
+@media (max-width:768px){
 	.header{
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		row-gap: 15px
 	}
 }
