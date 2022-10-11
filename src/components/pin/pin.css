@@ -86,6 +86,7 @@
   bottom: 15px;
   right: 15px;
 }
+
 .dropbtn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -147,3 +148,4 @@
 .menu-button:not(:last-child) {
   margin-bottom: 5px;
 }
+

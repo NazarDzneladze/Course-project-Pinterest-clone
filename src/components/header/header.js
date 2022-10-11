@@ -26,23 +26,24 @@ export function Header({ search, showBoardOne, showBoardTwo, showBoardThree }) {
     }
   };
 
-  this.div1 = document.createElement("div");
-  this.div2 = document.createElement("div");
-  this.div3 = document.createElement("div");
-  this.div4 = document.createElement("div");
-  this.rootElement.append(this.div1, this.div2, this.div3, this.div4);
+	this.div1 = document.createElement("div");
+	this.div2 = document.createElement("div");
+	this.div3 = document.createElement("div");
+	this.div3.classList.add('header-item');
+	this.div4 = document.createElement("div");
+	this.rootElement.append(this.div1, this.div2, this.div3, this.div4);
 
-  //  Создаём лого
-  this.logo = new Logo();
-  this.div1.append(this.logo.rootElement);
+	//  Создаём лого
+	this.logo = new Logo();
+	this.div1.append(this.logo.rootElement);
 
-  //  Cоздаём кнопку "главная"
-  this.buttonMainPage = new Button({
-    label: "Главная",
-    onClick: this.mainButtonReload,
-    id: "header-main-button",
-  });
-  this.div2.append(this.buttonMainPage.rootElement);
+	//  Cоздаём кнопку "главная"
+	this.buttonMainPage = new Button({
+		label: "Главная",
+		onClick: this.mainButtonReload,
+		id: "header-main-button",
+	});
+	this.div2.append(this.buttonMainPage.rootElement);
 
   // Создаём поиск
   this.input = new Input({
@@ -52,14 +53,14 @@ export function Header({ search, showBoardOne, showBoardTwo, showBoardThree }) {
   });
   this.div3.append(this.input.rootElement);
 
-  // Создаём кнопку "Выбрать доску"
-  this.buttonBoards = new Button({
-    label: "Выбрать доску",
-    onClick: this.openBoardsMenu,
-    className: "header-button-board",
-    id: "button-show",
-  });
-  this.div4.append(this.buttonBoards.rootElement);
+	// Создаём кнопку "Выбрать доску"
+	this.buttonBoards = new Button({
+		label: "Выбрать доску",
+		onClick: this.openBoardsMenu,
+		className: "header-button-board",
+		id:'button-show',
+	});
+	this.div4.append(this.buttonBoards.rootElement);
 
   // Список досок
   this.dropdownBoard = document.createElement("div");
@@ -94,13 +95,4 @@ export function Header({ search, showBoardOne, showBoardTwo, showBoardThree }) {
     this.board2.rootElement,
     this.board3.rootElement
   );
-
-  // window.onclick = (e) => {
-  //   if (!e.target.matches(".header-button-board")) {
-  //    let myDropdown = document.getElementById("header-dropdown-content");
-  //     if (myDropdown.classList.contains("drop")) {
-  //       myDropdown.classList.remove("drop");
-  //     }
-  //   }
-  // };
 }

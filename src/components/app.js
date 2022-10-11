@@ -32,7 +32,7 @@ export function App() {
 
 	// Пожаловаться на пин
 	this.complainAboutPin = (authorName) => {
-		alert(`Ваша жалоба на пит от пользователя ${authorName} успешна отправлена!`);
+		this.modal2.update(authorName);
 	}
 
 	// Открытие модального окна по добавлению пина на какую-либо из досок
@@ -62,7 +62,7 @@ export function App() {
 	});//Добавление доски, в которой будут отрисовываться пины
 
 	this.modal = new Modal();//Добавили код модального окна
-	this.modal2 = new Modal2();
+	this.modal2 = new Modal2({ sendComplainBtn: this.complainAboutPin });
 
 	// создаём шапку
 	this.header = new Header({

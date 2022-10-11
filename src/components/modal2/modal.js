@@ -1,36 +1,44 @@
 import "./modal2.css";
 import { Button } from "../common/button";
 
-export function Modal2() {
-  this.rootElement = document.createElement("div");
-  this.rootElement.classList.add("modal", "fade");
-  this.rootElement.id = "exampleModal2";
-  this.rootElement.tabIndex = "-1";
-  this.rootElement.ariaHidden = "true";
-  this.rootElement.setAttribute("aria-labelledby", "exampleModalLabel2");
+export function Modal2({ sendComplainBtn }) {
 
-  this.modalDialog = document.createElement("div");
-  this.modalDialog.classList.add("modal-dialog");
+	this.update = (nickname) => {
+		this.nickname = nickname;
+	}
 
-  this.modalContent = document.createElement("div");
-  this.modalContent.classList.add("modal-content");
+	this.sendInfo = () => {
+		alert(`Жалоба на пин от пользователя ${this.nickname} успешна отпраавлена`);
+	}
+	this.rootElement = document.createElement("div");
+	this.rootElement.classList.add("modal", "fade");
+	this.rootElement.id = "exampleModal2";
+	this.rootElement.tabIndex = "-1";
+	this.rootElement.ariaHidden = "true";
+	this.rootElement.setAttribute("aria-labelledby", "exampleModalLabel2");
 
-  this.modalHeader = document.createElement("div");
-  this.modalHeader.classList.add("modal-header");
+	this.modalDialog = document.createElement("div");
+	this.modalDialog.classList.add("modal-dialog");
 
-  this.modalTitle = document.createElement("h1");
-  this.modalTitle.classList.add("modal-title", "fs-5", "h1");
-  this.modalTitle.id = "exampleModalLabel2";
-  this.modalTitle.innerText = "Пожаловаться на пин";
+	this.modalContent = document.createElement("div");
+	this.modalContent.classList.add("modal-content");
 
-  this.modalBtn = new Button({ className: "btn-close" });
-  this.modalBtn.rootElement.setAttribute("data-bs-dismiss", "modal");
-  this.modalBtn.rootElement.setAttribute("aria-label", "Close");
+	this.modalHeader = document.createElement("div");
+	this.modalHeader.classList.add("modal-header");
 
-  this.modalBody = document.createElement("div");
-  this.modalBody.classList.add("modal-body");
+	this.modalTitle = document.createElement("h1");
+	this.modalTitle.classList.add("modal-title", "fs-5","h1");
+	this.modalTitle.id = "exampleModalLabel2";
+	this.modalTitle.innerText = "Пожаловаться на пин";
 
-  // Первый чекбокс
+	this.modalBtn = new Button({ className: "btn-close" });
+	this.modalBtn.rootElement.setAttribute("data-bs-dismiss", "modal");
+	this.modalBtn.rootElement.setAttribute("aria-label", "Close");
+
+	this.modalBody = document.createElement("div");
+	this.modalBody.classList.add("modal-body");
+
+	// Первый чекбокс
   this.firstCheckbox = document.createElement("div");
   this.firstCheckbox.classList.add("checkbox");
   this.firstLabel = document.createElement("label");
@@ -118,46 +126,49 @@ export function Modal2() {
   this.eighthCheckbox.append(this.modalCheck8, this.eighthLabel);
   // Восьмой чекбокс
 
-  this.modalBody.append(
-    this.firstCheckbox,
-    this.secondCheckbox,
-    this.thirdCheckbox,
-    this.fourthCheckbox,
-    this.fifthCheckbox,
-    this.sixthCheckbox,
-    this.seventhCheckbox,
-    this.eighthCheckbox
-  );
 
-  this.modalFooter = document.createElement("div");
-  this.modalFooter.classList.add("modal-footer");
+	this.modalBody.append(
+		this.firstCheckbox,
+		this.secondCheckbox,
+		this.thirdCheckbox,
+		this.fourthCheckbox,
+		this.fifthCheckbox,
+		this.sixthCheckbox,
+		this.seventhCheckbox,
+		this.eighthCheckbox,
+	);
 
-  this.buttonCancel = new Button({
-    label: "Отмена",
-  });
-  this.buttonCancel.rootElement.classList.add(
+
+	this.modalFooter = document.createElement("div");
+	this.modalFooter.classList.add("modal-footer");
+
+	this.buttonCancel = new Button({
+		label: "Отмена",
+	});
+	 this.buttonCancel.rootElement.classList.add(
     "btn",
     "btn-secondary",
     "btn-cancel"
   );
-  this.buttonCancel.rootElement.setAttribute("data-bs-dismiss", "modal");
+	this.buttonCancel.rootElement.setAttribute('data-bs-dismiss', 'modal');
 
-  this.buttonOwnward = new Button({
-    label: "Далее",
-  });
-  this.buttonOwnward.rootElement.classList.add("btn", "btn-primary", "btn-own");
+	this.buttonOwnward = new Button({
+		label: "Далее",
+		onClick: this.sendInfo,
+	});
+	this.buttonOwnward.rootElement.classList.add("btn", "btn-primary", "btn-own");
 
-  this.buttonsBox = document.createElement("div");
+	this.buttonsBox = document.createElement('div');
 
-  this.buttonsBox.append(
-    this.buttonCancel.rootElement,
-    this.buttonOwnward.rootElement
-  );
+	this.buttonsBox.append(
+		this.buttonCancel.rootElement,
+		this.buttonOwnward.rootElement,
+	);
 
-  this.modalBody.append(this.buttonsBox);
-  this.modalHeader.append(this.modalTitle, this.modalBtn.rootElement);
-  this.modalContent.append(this.modalHeader, this.modalBody);
-  this.modalDialog.append(this.modalContent);
+	this.modalBody.append(this.buttonsBox);
+	this.modalHeader.append(this.modalTitle, this.modalBtn.rootElement);
+	this.modalContent.append(this.modalHeader, this.modalBody);
+	this.modalDialog.append(this.modalContent);
 
-  this.rootElement.append(this.modalDialog);
+	this.rootElement.append(this.modalDialog);
 }
