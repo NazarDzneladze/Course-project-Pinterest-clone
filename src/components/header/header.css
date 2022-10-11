@@ -1,6 +1,10 @@
 .header {
-  max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
+	max-width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+			justify-content: space-between;
+	margin-bottom: 30px;
+  }
