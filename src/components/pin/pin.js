@@ -47,7 +47,7 @@ export function Pin({ id, img, avatar, nickname, remove, complain, modal }) {
 	// Кнопка "Добавить пин на доску"
 
 	// Кнопка "Скрыть пин со страницы"
-	this.hideFromBoardBtn = new Button({ label: "Скрить пин со страницы", onClick: this.remove });
+	this.hideFromBoardBtn = new Button({ label: "Скрыть пин со страницы", onClick: this.remove });
 	this.hideFromBoardBtn.rootElement.classList.add('btn', 'btn-info', 'menu-button');
 	// Кнопка "Скрыть пин со страницы"
 
