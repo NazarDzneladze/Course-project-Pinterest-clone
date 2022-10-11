@@ -1,5 +1,5 @@
-import { App } from "./components";
 import './index.css';
+import { App } from "./components";
 import { initializePinsBase } from "./components/api/local-storage";
 
 const root = document.getElementById('root');

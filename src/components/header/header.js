@@ -53,7 +53,8 @@ export function Header({ search, showBoardOne, showBoardTwo, showBoardThree }) {
 	this.buttonBoards = new Button({
 		label: "Выбрать доску",
 		onClick: this.openBoardsMenu,
-		id: "header-button-board",
+		className: "header-button-board",
+		id:'button-show',
 	});
 	this.div4.append(this.buttonBoards.rootElement);
 
