@@ -1,5 +1,4 @@
 .header {
-	/* max-width: 100%; */
 	display: -webkit-box;
 	display: -ms-flexbox;
 	-webkit-box-pack: justify;
@@ -13,7 +12,6 @@
 	        align-items: center;
 	justify-content: space-between;
     align-items: center;
-    /* flex-direction: column; */
     margin: 0 -5px 30px;
     display: flex;
     row-gap: 15px
