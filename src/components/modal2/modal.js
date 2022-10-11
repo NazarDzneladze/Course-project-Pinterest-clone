@@ -1,8 +1,14 @@
 import { Button } from "../common/button";
 
-export function Modal2() {
+export function Modal2({ sendComplainBtn }) {
 
+	this.update = (nickname) => {
+		this.nickname = nickname;
+	}
 
+	this.sendInfo = () => {
+		alert(`Жалоба на пин от пользователя ${this.nickname} успешна отпраавлена`);
+	}
 	this.rootElement = document.createElement("div");
 	this.rootElement.classList.add("modal", "fade");
 	this.rootElement.id = "exampleModal2";
@@ -128,6 +134,7 @@ export function Modal2() {
 
 	this.buttonOwnward = new Button({
 		label: "Далее",
+		onClick: this.sendInfo,
 	});
 	this.buttonOwnward.rootElement.classList.add('btn', 'btn-primary');
 

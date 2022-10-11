@@ -30,6 +30,7 @@ export function Header({ search, showBoardOne, showBoardTwo, showBoardThree }) {
 	this.div1 = document.createElement("div");
 	this.div2 = document.createElement("div");
 	this.div3 = document.createElement("div");
+	this.div3.classList.add('header-item');
 	this.div4 = document.createElement("div");
 	this.rootElement.append(this.div1, this.div2, this.div3, this.div4);
 
